@@ -9,11 +9,16 @@ import {
 } from '@angular/core';
 import { DetailsReviewsComponent } from '../details-reviews/details-reviews.component';
 import { DetailsMoviesComponent } from '../details-movies/details-movies.component';
+import { DetailsActorsComponent } from '../app-details-actors/app-details-actors.component';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [DetailsReviewsComponent, DetailsMoviesComponent],
+  imports: [
+    DetailsReviewsComponent,
+    DetailsMoviesComponent,
+    DetailsActorsComponent,
+  ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
