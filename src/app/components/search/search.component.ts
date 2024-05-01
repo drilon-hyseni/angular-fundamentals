@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,5 +9,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './search.component.css',
 })
 export class SearchComponent {
-  movieTitle = 'Example movie';
+  movieTitle = '';
+
+  constructor(private _activatedRoute: ActivatedRoute) {
+    this._activatedRoute.params.subscribe((p) => {
+      this.movieTitle = p['movieTitle'];
+    });
+  }
 }
