@@ -4,6 +4,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { DetailsActorsComponent } from './components/app-details-actors/app-details-actors.component';
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
+import { FetchBackend } from '@angular/common/http';
+import { SearchComponent } from './components/search/search.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,4 +14,6 @@ export const routes: Routes = [
   { path: 'details/actors', component: DetailsActorsComponent },
   { path: 'details/movies', component: DetailsMoviesComponent },
   { path: 'details/reviews', component: DetailsReviewsComponent },
+  //   { path: 'feedback', component: FeedbackComponent },
+  { path: 'search', component: SearchComponent },
 ];

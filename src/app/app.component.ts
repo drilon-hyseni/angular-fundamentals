@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetailsComponent } from './components/details/details.component';
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
@@ -28,6 +28,7 @@ import { SearchComponent } from './components/search/search.component';
     ModalComponent,
     NotAuthorizedComponent,
     SearchComponent,
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
