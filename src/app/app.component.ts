@@ -11,6 +11,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 import { SearchComponent } from './components/search/search.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,7 @@ import { SearchComponent } from './components/search/search.component';
     NotAuthorizedComponent,
     SearchComponent,
     RouterModule,
+    NotFoundComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

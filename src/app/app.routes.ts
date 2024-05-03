@@ -6,6 +6,7 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { FetchBackend } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,4 +17,7 @@ export const routes: Routes = [
   { path: 'details/reviews/:id', component: DetailsReviewsComponent },
   //   { path: 'feedback', component: FeedbackComponent },
   { path: 'search/:movieTitle', component: SearchComponent },
+
+  //404 Page for non-existing URLs
+  { path: '**', component: NotFoundComponent },
 ];
