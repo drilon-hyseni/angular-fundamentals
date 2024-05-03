@@ -10,7 +10,13 @@ import {
 import { DetailsReviewsComponent } from '../details-reviews/details-reviews.component';
 import { DetailsMoviesComponent } from '../details-movies/details-movies.component';
 import { DetailsActorsComponent } from '../app-details-actors/app-details-actors.component';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+  RouterLink,
+  RouterModule,
+} from '@angular/router';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -20,6 +26,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
     DetailsMoviesComponent,
     DetailsActorsComponent,
     RouterLink,
+    RouterModule,
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',

@@ -18,6 +18,17 @@ export const routes: Routes = [
   //   { path: 'feedback', component: FeedbackComponent },
   { path: 'search/:movieTitle', component: SearchComponent },
 
+  //Start: Nested Routes
+  // {
+  //   path: 'details/:id',
+  //   component: DetailsComponent,
+  //   children: [
+  //     { path: 'actors', component: DetailsActorsComponent },
+  //     { path: 'movies', component: DetailsMoviesComponent },
+  //     { path: 'reviews', component: DetailsReviewsComponent },
+  //   ],
+  // },
+
   //404 Page for non-existing URLs
   { path: '**', component: NotFoundComponent },
 ];
