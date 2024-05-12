@@ -1,5 +1,5 @@
 <div class="row">
-  <h2 appHeader>This is just a sample.</h2>
+  <h2 appHeader *ngIf="!isVisible">This is just a sample.</h2>
   <!-- slider will load here -->
   <div class="col-md-8">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
@@ -84,40 +84,19 @@
 
   <!-- Cards will load here -->
   <div class="col-md-4">
-    <div class="card mb-3" style="max-width: 540px">
+    <div
+      *ngFor="let movie of topMovies"
+      class="card mb-3"
+      style="max-width: 540px"
+    >
       <div class="row g-0">
         <div class="col-md-4">
-          <img
-            src="../../../assets/images/ai-image-generator-two.webp"
-            class="img-fluid rounded-start"
-          />
+          <img [src]="movie.imageUrl" class="img-fluid rounded-start" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card.</p>
-            <p class="card-text">
-              <a class="btn btn-warning">
-                <i class="bi bi-film"></i> Trailer
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src="../../../assets/images/ai-image-generator-two.webp"
-            class="img-fluid rounded-start"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card.</p>
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">{{ movie.actors }}</p>
             <p class="card-text">
               <a class="btn btn-warning">
                 <i class="bi bi-film"></i> Trailer
@@ -136,62 +115,21 @@
   <h1>Fan favourites</h1>
   <hr />
 
-  <div class="col-md-3">
+  <div class="col-md-3" *ngFor="let movie of fanFavourtieMovies">
     <div class="card">
-      <img src="../../../assets/images/paris.jpg" class="card-image" alt="" />
+      <img [src]="movie.imageUrl" class="card-image" alt="" />
       <div class="card-body">
-        <h5 class="card-title">Movie Title</h5>
-        <p class="card-text">Movie actors</p>
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">{{ movie.actors }}</p>
       </div>
       <div class="card-footer text-center text-muted">
-        <span style="float: left"><i class="bi bit-calendar"></i> 2023</span>
-        <span>9.5/10</span>
-        <span style="float: right"><i class="bi bi-trophy"></i> 1</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="card">
-      <img src="../../../assets/images/paris.jpg" class="card-image" alt="" />
-      <div class="card-body">
-        <h5 class="card-title">Movie Title</h5>
-        <p class="card-text">Movie actors</p>
-      </div>
-      <div class="card-footer text-center text-muted">
-        <span style="float: left"><i class="bi bit-calendar"></i> 2023</span>
-        <span>9.5/10</span>
-        <span style="float: right"><i class="bi bi-trophy"></i> 1</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="card">
-      <img src="../../../assets/images/paris.jpg" class="card-image" alt="" />
-      <div class="card-body">
-        <h5 class="card-title">Movie Title</h5>
-        <p class="card-text">Movie actors</p>
-      </div>
-      <div class="card-footer text-center text-muted">
-        <span style="float: left"><i class="bi bit-calendar"></i> 2023</span>
-        <span>9.5/10</span>
-        <span style="float: right"><i class="bi bi-trophy"></i> 1</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="card">
-      <img src="../../../assets/images/paris.jpg" class="card-image" alt="" />
-      <div class="card-body">
-        <h5 class="card-title">Movie Title</h5>
-        <p class="card-text">Movie actors</p>
-      </div>
-      <div class="card-footer text-center text-muted">
-        <span style="float: left"><i class="bi bit-calendar"></i> 2023</span>
-        <span>9.5/10</span>
-        <span style="float: right"><i class="bi bi-trophy"></i> 1</span>
+        <span style="float: left"
+          ><i class="bi bit-calendar"></i> {{ movie.year }}</span
+        >
+        <span>{{ movie.rate }}/10</span>
+        <span style="float: right"
+          ><i class="bi bi-trophy"></i> {{ movie.rank }}</span
+        >
       </div>
     </div>
   </div>
