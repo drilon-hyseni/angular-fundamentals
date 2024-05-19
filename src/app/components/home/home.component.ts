@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HeaderDirective } from '../../directives/header.directive';
 import { Title } from '@angular/platform-browser';
+import { MyIfDirective } from '../../directives/my-if.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderDirective],
+  imports: [CommonModule, HeaderDirective, MyIfDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -14,6 +15,8 @@ export class HomeComponent {
   constructor() {}
 
   isVisible = false;
+
+  isActive = true;
 
   fanFavourtieMovies: any[] = [
     {
