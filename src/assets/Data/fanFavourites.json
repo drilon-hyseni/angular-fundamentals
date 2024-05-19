@@ -1,0 +1,42 @@
+[
+  {
+    "imageUrl": "../../../assets/images/paris.jpg",
+    "title": "'Movie Title'",
+    "actors": "Movie Actors",
+    "year": "2023",
+    "rate": 9.5,
+    "rank": 1
+  },
+  {
+    "imageUrl": "../../../assets/images/paris.jpg",
+    "title": "'Movie Title'",
+    "actors": "Movie Actors",
+    "year": "2023",
+    "rate": 9.5,
+    "rank": 1
+  },
+  {
+    "imageUrl": "../../../assets/images/paris.jpg",
+    "title": "'Movie Title'",
+    "actors": "Movie Actors",
+    "year": "2023",
+    "rate": 9.5,
+    "rank": 1
+  },
+  {
+    "imageUrl": "../../../assets/images/paris.jpg",
+    "title": "'Movie Title'",
+    "actors": "Movie Actors",
+    "year": "2023",
+    "rate": 9.5,
+    "rank": 1
+  },
+  {
+    "imageUrl": "../../../assets/images/paris.jpg",
+    "title": "'Movie Title'",
+    "actors": "Movie Actors",
+    "year": "2023",
+    "rate": 9.5,
+    "rank": 1
+  }
+]

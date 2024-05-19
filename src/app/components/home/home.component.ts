@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { HeaderDirective } from '../../directives/header.directive';
 import { Title } from '@angular/platform-browser';
 import { MyIfDirective } from '../../directives/my-if.directive';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -12,75 +13,36 @@ import { MyIfDirective } from '../../directives/my-if.directive';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor() {}
+  //Inject HttpClient
+  constructor(private httpClient: HttpClient) {}
 
   isVisible = false;
 
   isActive = true;
 
-  fanFavourtieMovies: any[] = [
-    {
-      imageUrl: '../../../assets/images/paris.jpg',
-      title: 'Movie Title',
-      actors: 'Movie Actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 1,
-    },
-    {
-      imageUrl: '../../../assets/images/paris.jpg',
-      title: 'Movie 22 Title',
-      actors: 'Movie 22 Actors',
-      year: '2023',
-      rate: 8.2,
-      rank: 2,
-    },
-    {
-      imageUrl: '../../../assets/images/paris.jpg',
-      title: 'Movie 33 Title',
-      actors: 'Movie 33 Actors',
-      year: '2023',
-      rate: 7.8,
-      rank: 3,
-    },
-    {
-      imageUrl: '../../../assets/images/paris.jpg',
-      title: 'Movie 4 Title',
-      actors: 'Movie 4 Actors',
-      year: '2023',
-      rate: 4.2,
-      rank: 3,
-    },
-  ];
+  fanFavourtieMovies: any[] = [];
+  topMovies: any[] = [];
 
-  topMovies: any[] = [
-    {
-      imageUrl: '../../../assets/images/paris.jpg',
-      title: 'Movie Title',
-      actors: 'Movie Actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 1,
-    },
-    {
-      imageUrl: '../../../assets/images/paris.jpg',
-      title: 'Movie 22 Title',
-      actors: 'Movie 22 Actors',
-      year: '2023',
-      rate: 8.2,
-      rank: 2,
-    },
-  ];
+  ngOnInit(): void {
+    this.getFanFavouriteMovies();
+    this.getTopMovies();
+  }
 
-  // currentStyles: Record<string, string> = {};
-  // isCentered = true;
-  // isSuccess = false;
-  // isLarge = true;
-  // constructor() {
-  //   this.currentStyles = {
-  //     'text-align': this.isCentered ? 'center' : '',
-  //     color: this.isSuccess ? 'green' : 'red',
-  //     'font-size': this.isLarge ? 'large' : 'small',
-  //   };
-  // }
+  getFanFavouriteMovies() {
+    this.httpClient
+      .get<any[]>('assets/Data/fanFavourites.json')
+      .subscribe((data: any[]) => {
+        console.log('fanfavourites', data);
+        this.fanFavourtieMovies = data;
+      });
+  }
+
+  getTopMovies() {
+    this.httpClient
+      .get<any[]>('assets/Data/topmovies.json')
+      .subscribe((data: any[]) => {
+        console.log('topmovies', data);
+        this.topMovies = data;
+      });
+  }
 }

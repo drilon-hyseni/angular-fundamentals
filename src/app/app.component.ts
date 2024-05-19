@@ -13,6 +13,7 @@ import { NotAuthorizedComponent } from './components/not-authorized/not-authoriz
 import { SearchComponent } from './components/search/search.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -31,6 +32,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SearchComponent,
     RouterModule,
     NotFoundComponent,
+
+    HttpClientModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
