@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderDirective } from '../../directives/header.directive';
 import { Title } from '@angular/platform-browser';
 import { MyIfDirective } from '../../directives/my-if.directive';
@@ -13,7 +13,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  //Inject HttpClient
+  //Dependecy injection
+  private httpClientOther = inject(HttpClient);
+
   constructor(private httpClient: HttpClient) {}
 
   isVisible = false;
