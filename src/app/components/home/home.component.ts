@@ -4,6 +4,7 @@ import { HeaderDirective } from '../../directives/header.directive';
 import { Title } from '@angular/platform-browser';
 import { MyIfDirective } from '../../directives/my-if.directive';
 import { HttpClient } from '@angular/common/http';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent {
   //Dependecy injection
   private httpClientOther = inject(HttpClient);
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private moviesService: MoviesService) {}
 
   isVisible = false;
 
@@ -31,20 +32,16 @@ export class HomeComponent {
   }
 
   getFanFavouriteMovies() {
-    this.httpClient
-      .get<any[]>('assets/Data/fanFavourites.json')
-      .subscribe((data: any[]) => {
-        console.log('fanfavourites', data);
-        this.fanFavourtieMovies = data;
-      });
+    this.moviesService.getFanFavouriteMovies().subscribe((data: any[]) => {
+      console.log('fanfavourites', data);
+      this.fanFavourtieMovies = data;
+    });
   }
 
   getTopMovies() {
-    this.httpClient
-      .get<any[]>('assets/Data/topmovies.json')
-      .subscribe((data: any[]) => {
-        console.log('topmovies', data);
-        this.topMovies = data;
-      });
+    this.moviesService.getTopMovies().subscribe((data: any[]) => {
+      console.log('topmovies', data);
+      this.topMovies = data;
+    });
   }
 }
